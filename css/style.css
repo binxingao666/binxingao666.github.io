@@ -661,6 +661,30 @@ em {
   background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--white) 100%);
 }
 
+/* Award highlight card */
+.project-card--award {
+  background: linear-gradient(135deg, #FDF8F0 0%, #FEF9F3 50%, #FFFCF8 100%);
+  border: 2px solid var(--accent-gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card--award::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-primary), var(--accent-gold));
+}
+
+.project-card__status--award {
+  background-color: var(--accent-gold);
+  color: var(--white);
+  font-weight: 600;
+}
+
 .project-card__status {
   display: inline-block;
   font-size: var(--text-xs);

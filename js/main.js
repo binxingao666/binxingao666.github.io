@@ -70,9 +70,21 @@ function handleScroll() {
     ticking = false;
 }
 
+// Back to top button visibility
+const backToTop = document.getElementById('backToTop');
+
+function toggleBackToTop() {
+    if (window.scrollY > window.innerHeight * 0.5) {
+        backToTop?.classList.add('visible');
+    } else {
+        backToTop?.classList.remove('visible');
+    }
+}
+
 window.addEventListener('scroll', () => {
     if (!ticking) {
         requestAnimationFrame(handleScroll);
+        toggleBackToTop(); // Add this to the existing scroll listener
         ticking = true;
     }
 });
